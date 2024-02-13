@@ -1,0 +1,63 @@
+﻿@model IntroToASP.NETMVC.Models.LoginInformationModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Display Form";
+}
+
+<h3>Display Form Data</h3>
+<table>
+    <tr>
+        <td>
+            Email Address:
+        </td>
+        <td>
+            @Model.EmailAddress
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password:
+        </td>
+        <td>
+            @Model.Password  
+        </td>
+    </tr>
+    <tr>
+    <td>
+        Student ID
+    </td>
+    <td>
+        @Model.studentNumber
+    </td>
+    </tr>
+    <tr>
+        <td>
+            First Name
+        </td>
+        <td>
+            @Model.FirstName
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Last Name
+        </td>
+        <td>
+            @Model.LastName
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            @Model.Description
+        </td>
+    </tr>
+</table>
+<br />
+<br />
+<br />
+NOTE: This model data will not persist. This data would normally be stored in a database somewhere and then pulled again when needed.

@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Store the number of monkeys in session";
+}
+
+<h3>Enter the amount of monkeys</h3> 
+<form asp-controller="Home" asp-action="Sing" method="post">
+    <table>
+        <tr>
+            <td>Number</td>
+            <td><input type="number" name="numberInput" min="50" max="100" required/></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit" />
+
+</form>

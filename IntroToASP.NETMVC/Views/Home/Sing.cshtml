@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Five Little Monkeys</h2>
+
+@{
+    int monkeysLeft = 0;
+
+    if(@Context.Session.GetString("numberInput").Length > 0)
+    {
+        String temp = @Context.Session.GetString("numberInput");
+        monkeysLeft = int.Parse(temp);
+    }
+
+    if (monkeysLeft > 0)
+    {
+        for (int i = monkeysLeft; i >= 1; i--)
+        {
+            string pronoun = i % 2 == 0 ? "she" : "he";
+            string plural = i == 1 ? "monkey" : "monkeys";
+            string lastSentence = i == 1 ? "Put those monkeys to bed!" : "No more monkeys jumping on the bed!";
+
+            <p>
+                @i little @plural, jumping on the bed,<br>
+                One fell off and bumped @pronoun head,<br>
+                Mama called the doctor and the doctor said,<br>
+                @lastSentence
+            </p>
+
+            if (i > 1)
+            {
+                <br>
+            }
+        }
+    }
+    else
+    {
+        <p>
+            No more monkeys jumping on the bed,<br>
+            The end.
+        </p>
+    }
+
+
+}

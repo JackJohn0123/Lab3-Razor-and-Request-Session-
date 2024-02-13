@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewData["Title"]</title>
+        <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            Jack Johnston: Welcome to my website!  @ViewBag.title
+            <br />
+            <br />
+
+        @Html.ActionLink("Home", "Index", "Home")            <br />
+        @Html.ActionLink("Show the song!", "SongForm", "Home") <br />
+        @Html.ActionLink("Students", "CreateStudent", "Home") <br />
+        </header>
+        <div class="content">
+            @RenderBody()
+        </div>
+        <footer>
+        <br>
+            a. Layout Description: The application's main layout is contained in the _Layout file. It outlines the general organization and common components—like the header, footer, and navigation—that are shared by several pages.
+            </br>
+
+            b. File Organization:'wwwroot/css' is where I put the CSS file. Images, JavaScript, and CSS are examples of static materials that are frequently kept in this directory. Better organization and simpler maintenance are ensured when CSS files are kept apart from other content. Usually, the _Layout file can be found in the 'Views/Shared' directory. Its placement here guarantees uniformity between views and facilitates simple access.
+        </br>
+            c. Content Exclusion: In order to concentrate only on the procedures involved in integrating the CSS file and the _Layout file, I have removed the content of the CSS file and its definition. This aids in preserving
+        </br>
+    </footer>
+    </body>
+</html>
