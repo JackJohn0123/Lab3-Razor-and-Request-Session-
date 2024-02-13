@@ -30,7 +30,7 @@ namespace IntroToASP.NETMVC.Controllers
         public IActionResult CreateStudent() => View();
 
         [HttpPost]
-        public IActionResult DisplayStudent(LoginInformationModel model)
+        public IActionResult DisplayStudent(Student model)
         {
             return View(model);
         }

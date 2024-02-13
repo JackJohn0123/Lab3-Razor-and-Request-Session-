@@ -1,25 +1,63 @@
-﻿namespace IntroToASP.NETMVC.Models
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+
+namespace IntroToASP.NETMVC.Models
 {
     public class Student
     {
-        public string Name
+        [Required]
+        [StringLength(255)]
+        [EmailAddress]
+        public string EmailAddress
         {
             get;
             set;
         }
 
-        public string StudentId
+        [Required]
+        [StringLength(100)]
+        [BindProperty(Name = "pass")]
+        public string Password
         {
             get;
             set;
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public string Password { get; set; }
-        public string Description { get; set; }
 
+        [Required]
+        [Range(0, 100)] 
+        [BindProperty(Name = "studentNumber")]
+        public int studentNumber
+        {
+            get; set;
+        }
+
+        [Required]
+        [StringLength(100)]
+        [BindProperty(Name = "FirstName")]
+        public string FirstName
+        {
+            get;
+            set;
+        }
+
+        [Required]
+        [StringLength(100)]
+        [BindProperty(Name = "LastName")]
+        public string LastName
+        {
+            get;
+            set;
+        }
+
+        [Required]
+        [StringLength(100)]
+        [BindProperty(Name = "Description")]
+        public string Description
+        {
+            get;
+            set;
+        }
 
     }
 }
